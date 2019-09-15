@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="sv">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{{ app.siteName }} &ndash; {{ title }}</title>
+        <meta name="description" content="{{ app.siteDescription }}"/>
+        <meta name="keywords" content="{{ app.siteKeywords }}>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="application-name" content="{{ app.siteName }}">
+        <link rel="icon" href="/favicon.ico">
+        <meta name='robots' content='index,follow'/>
+        <link rel="stylesheet" href="/css/main.css">
+        <meta name="google-site-verification" content="{{ app.googleSiteVerification }}"/>
+
+        {% if app.environment != 'development' and app.googleAnalytics != '' %}
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id={{ app.googleAnalytics }}"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag() {
+                    dataLayer.push(arguments);
+                }
+                gtag('js', new Date());
+
+                gtag('config', '{{ app.googleAnalytics }}');
+            </script>
+            <!-- End Google Tag Manager -->
+        {% endif %}
+    </head>
+
+    <body class="font-sans bg-gray-100 text-gray-800">
+        <header class="bg-gray-200">
+            <div class="container mx-auto mb-8">
+                <div class="mx-4 md:mx-32 flex items-center justify-between">
+                    <div class="text-center flex-1">
+                        <h1 class="mt-4 md:mt-12">11ty demo</h1>
+                    </div>
+                    <img src='img/logo.png' class="block w-16 h-16 flex-none">
+                </div>
+            </div>
+        </header>
+        <div class="container mx-auto font-sans leading-normal">
+            <section role="main" class="mx-4 md:mx-8 lg:mx-12">
+                <div class="mt-12 ">
+                    {{ content | safe }}
+                </div>
+            </section>
+        </div>
+        <footer class="bg-gray-200 text-sm text-center mt-8 py-1">
+            <div>
+                &copy; 2019 {{ app.siteAuthor }}
+                <a href="mailto:webmaster@chenghsin.se" class="pl-8 text-gray-600 no-underline">Kontakta webmaster</a>
+            </div>
+        </footer>
+        <script src="js/main.js"></script>
+    </body>
+</html>
