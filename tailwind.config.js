@@ -1,41 +1,16 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+const defaultConfig = require("tailwindcss/defaultConfig");
+
 module.exports = {
+  purge: [
+    './source/**/*.html',
+    './source/**/*.md',
+  ],
   theme: {
     fontFamily: {
-      'sans': [
-        'Open Sans',
-        'system-ui',
-        'BlinkMacSystemFont',
-        '-apple-system',
-        'Segoe UI',
-        'Roboto',
-        'Oxygen',
-        'Ubuntu',
-        'Cantarell',
-        'Fira Sans',
-        'Droid Sans',
-        'Helvetica Neue',
-        'sans-serif',
-      ],
-      'serif': [
-        'Georgia',
-        'Constantia',
-        'Lucida Bright',
-        'Lucidabright',
-        'Lucida Serif',
-        'Lucida',
-        'DejaVu Serif',
-        'Bitstream Vera Serif',
-        'Liberation Serif',
-        'serif',
-      ],
-      'mono': [
-        'Menlo',
-        'Monaco',
-        'Consolas',
-        'Liberation Mono',
-        'Courier New',
-        'monospace',
-      ],
+      sans: ["Open Sans", ...defaultTheme.fontFamily.sans],
+      serif: [...defaultTheme.fontFamily.serif],
+      mono: [...defaultTheme.fontFamily.mono],
     },
     screens: {
       'sm': '640px',
