@@ -1,8 +1,8 @@
 # Website template with eleventy and tailwindcss
 
-This sets up a site using eleventy and tailwindcss, using laravel mix. Currently using eleventy 0.9 and tailwind 1.1.
+This sets up a site using eleventy and tailwindcss, using laravel mix. Currently using eleventy 0.10 and tailwind 1.4.
 
-PostCSS is uesd to allow imports and nested rules, to allow sass-like features.
+PostCSS is used to allow imports and nested rules, to allow sass-like features.
 
 ## Setup
 
